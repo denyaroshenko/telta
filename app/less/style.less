@@ -15,84 +15,129 @@
 
 body
 {
-    font-family: @font-main;
+  font-family: @font-main;
+}
+
+a
+{
+  cursor: pointer;
+  text-decoration: none;
+}
+
+select
+{
+  cursor: pointer;
 }
 
 .clearfix::after
 {
-    display: table;
-    clear: both;
+  display: table;
+  clear: both;
 
-    content: '';
+  content: '';
 }
 
 .container
 {
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 15px;
-    padding-left: 15px;
-    @media only screen and (min-width: @screen-size-sm)
-    {
-    }
-    @media only screen and (min-width: @screen-size-md)
-    {
-    }
-    @media only screen and (min-width: @screen-size-lg)
-    {
-        max-width: @container-max-width;
-    }
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  @media only screen and (min-width: @screen-size-sm)
+  {
+  }
+  @media only screen and (min-width: @screen-size-md)
+  {
+  }
+  @media only screen and (min-width: @screen-size-lg)
+  {
+    max-width: @container-max-width;
+  }
 }
 
 header
 {
-    background: @color-main;
+  background: @color-main;
 }
 
 .header
 {
-    &__middle
+  &__middle
+  {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  &__logo
+  {
+    width: 150px;
+    height: 100px;
+
+    background: url('../img/logo.png') center center no-repeat;
+    background-size: contain;
+  }
+  &__caption
+  {
+    font-weight: 100;
+
+    text-align: center;
+
+    color: #fff;
+  }
+  &__contacts
+  {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: right;
+
+    color: #fff;
+
+    align-items: flex-end;
+  }
+  &__phone
+  {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  &__callback
+  {
+    font-size: 14px;
+    font-weight: 100;
+
+    display: inline-table;
+
+    text-align: right;
+    text-decoration: none;
+
+    color: @color-main-second;
+    border-bottom: 1px dashed @color-main-second;
+  }
+  &__change_lang
+  {
+    font-size: 13px;
+    font-weight: 100;
+
+    position: absolute;
+    top: -20px;
+
+    padding-right: 13px;
+
+    color: #fff;
+    border: 0;
+    outline: none;
+    background: transparent;
+    background: url('../img/icon-dropdown-white.png') no-repeat right;
+    background-size: 10px;
+
+    appearance: none;
+    option
     {
-        display: flex;
-
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
+      color: #000;
     }
-    &__logo
-    {
-        width: 150px;
-        height: 100px;
-
-        background: url('../img/logo.png') center center no-repeat;
-        background-size: contain;
-    }
-    &__caption
-    {
-        color: #fff;
-        font-weight: 100;
-        text-align: center;
-    }
-    &__contacts
-    {
-        display: flex;
-        flex-direction: column;
-		align-items: flex-end;
-        text-align: right;
-
-        color: #fff;
-    }
-    &__callback
-    {
-        font-size: 14px;
-        font-weight: 100;
-
-        display: inline-table;
-
-        text-align: right;
-        text-decoration: none;
-
-        color: @color-main-second;
-        border-bottom: 1px dashed @color-main-second;
-    }
+  }
 }
