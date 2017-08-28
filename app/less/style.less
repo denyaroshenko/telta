@@ -69,14 +69,27 @@ header
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
+    @media only screen and (min-width: @screen-size-sm)
+  {
+  }
+  @media only screen and (min-width: @screen-size-md)
+  {
+    flex-direction: row;
+  }
+  @media only screen and (min-width: @screen-size-lg)
+  {
+
+  }
   }
   &__logo
   {
     width: 150px;
-    height: 100px;
+    height: 63px;
 
     background: url('../img/logo.png') center center no-repeat;
     background-size: contain;
+    margin: 20px;
   }
   &__caption
   {
@@ -85,6 +98,7 @@ header
     text-align: center;
 
     color: #fff;
+    margin: 20px;
   }
   &__contacts
   {
@@ -96,6 +110,7 @@ header
     text-align: right;
 
     color: #fff;
+    margin: 20px;
 
     align-items: flex-end;
   }
