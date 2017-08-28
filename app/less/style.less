@@ -11,6 +11,7 @@
 
 // Цвета
 @color-main: #003474;
+@color-main-dark: #002553;
 @color-main-second: #ffdd02;
 
 body
@@ -24,7 +25,12 @@ a
   text-decoration: none;
 }
 
-select
+input{
+    outline: none;
+}
+
+select,
+input[type=submit]
 {
   cursor: pointer;
 }
@@ -65,40 +71,34 @@ header
   &__middle
   {
     display: flex;
+    flex-direction: column;
 
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    flex-direction: column;
-    @media only screen and (min-width: @screen-size-sm)
-  {
-  }
-  @media only screen and (min-width: @screen-size-md)
-  {
-    flex-direction: row;
-  }
-  @media only screen and (min-width: @screen-size-lg)
-  {
-
-  }
+    @media only screen and (min-width: @screen-size-md)
+    {
+      flex-direction: row;
+    }
   }
   &__logo
   {
     width: 150px;
     height: 63px;
+    margin: 20px;
 
     background: url('../img/logo.png') center center no-repeat;
     background-size: contain;
-    margin: 20px;
   }
   &__caption
   {
     font-weight: 100;
 
+    margin: 20px;
+
     text-align: center;
 
     color: #fff;
-    margin: 20px;
   }
   &__contacts
   {
@@ -107,10 +107,11 @@ header
     display: flex;
     flex-direction: column;
 
+    margin: 20px;
+
     text-align: right;
 
     color: #fff;
-    margin: 20px;
 
     align-items: flex-end;
   }
@@ -155,4 +156,73 @@ header
       color: #000;
     }
   }
+}
+
+.main-nav
+{
+  background: @color-main-dark;
+  &__wrapper
+  {
+    display: flex;
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  &__list
+  {
+    display: flex;
+  }
+  &__item
+  {
+    padding: 25px 15px;
+    a
+    {
+      font-size: 16px;
+      font-weight: 100;
+
+      color: #fff;
+    }
+    &:hover
+    {
+      background: @color-main-second;
+      a
+      {
+        color: @color-main-dark;
+      }
+    }
+  }
+}
+
+.search
+{
+  position: relative;
+
+  display: flex;
+
+  flex-wrap: nowrap;
+  margin: 10px;
+}
+
+input[type=search]
+{
+  padding: 10px 15px;
+
+  border: 0;
+  border-radius: 3px;
+  &::-webkit-input-placeholder
+  {
+    color: @color-main-dark;
+  }
+}
+
+input[type=submit]
+{
+  position: absolute;
+  right: 0;
+  background: url('../img/icon-search.png') center center no-repeat;
+  background-size: 20px;
+  height: 40px;
+  width: 40px;
+  border: 0;
 }
