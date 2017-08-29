@@ -13,6 +13,7 @@
 @color-main: #003474;
 @color-main-dark: #002553;
 @color-main-second: #ffdd02;
+@color-link: #06c;
 
 body
 {
@@ -25,8 +26,9 @@ a
   text-decoration: none;
 }
 
-input{
-    outline: none;
+input
+{
+  outline: none;
 }
 
 select,
@@ -49,12 +51,6 @@ input[type=submit]
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
-  @media only screen and (min-width: @screen-size-sm)
-  {
-  }
-  @media only screen and (min-width: @screen-size-md)
-  {
-  }
   @media only screen and (min-width: @screen-size-lg)
   {
     max-width: @container-max-width;
@@ -171,11 +167,22 @@ header
   }
   &__list
   {
+    position: relative;
+
     display: flex;
+
+    margin: 0;
+    padding: 0;
   }
   &__item
   {
+    position: relative;
+
     padding: 25px 15px;
+
+    list-style: none;
+
+    cursor: pointer;
     a
     {
       font-size: 16px;
@@ -186,9 +193,56 @@ header
     &:hover
     {
       background: @color-main-second;
-      a
+      & > a
       {
         color: @color-main-dark;
+      }
+    }
+  }
+}
+
+.dropdown-menu
+{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  z-index: 100;
+
+  width: max-content;
+  padding: 20px;
+
+  background: #fff;
+  box-shadow: 0 0 30px rgba(0,0,0,.25);
+  li
+  {
+    margin: 20px 0;
+    background: url('../img/icon-menu-item.png') left center no-repeat;
+    background-size: 7px;
+    padding-left: 20px;
+
+    list-style: none;
+    &:first-child
+    {
+      margin-top: 0;
+    }
+    &:last-child
+    {
+      margin-bottom: 0;
+    }
+    a
+    {
+      font-size: 16px;
+
+      text-decoration: underline;
+
+      color: @color-link;
+    }
+    &:hover
+    {
+      & > a
+      {
+        color: @color-main;
       }
     }
   }
@@ -200,8 +254,9 @@ header
 
   display: flex;
 
-  flex-wrap: nowrap;
   margin: 10px;
+
+  flex-wrap: nowrap;
 }
 
 input[type=search]
@@ -220,9 +275,11 @@ input[type=submit]
 {
   position: absolute;
   right: 0;
+
+  width: 40px;
+  height: 40px;
+
+  border: 0;
   background: url('../img/icon-search.png') center center no-repeat;
   background-size: 20px;
-  height: 40px;
-  width: 40px;
-  border: 0;
 }
