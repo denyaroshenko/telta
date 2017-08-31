@@ -16,10 +16,10 @@ var gulp = require('gulp'),
 var path = {
     build: { //Куда складывать готовые после сборки файлы
         html: 'dist/',
-        js: 'dist/js/',
-        css: 'dist/css/',
-        img: 'dist/img/',
-        fonts: 'dist/fonts/',
+        js: 'dist/assets/js/',
+        css: 'dist/',
+        img: 'dist/assets/images/',
+        fonts: 'dist/assets/fonts/',
         htaccess: 'dist/',
         contentImg: 'dist/img/',
         sprites: 'dist/css/images/',
@@ -68,11 +68,11 @@ gulp.task('html:build', function () {
 });
 
 // конвертируем LESS в CSS
-gulp.task('css:build', function() {  
+gulp.task('css:build', function() {
   gulp.src(path.src.less)
   	//Конвертируем LESS в CSS
     .pipe(less())
-	
+
 	//Очистка CSS от повторений и поиск неиспользуемых стилей
     /*.pipe(uncss({
         //html: [path.src.html]

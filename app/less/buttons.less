@@ -1,0 +1,89 @@
+// Дефолтные цвета
+@color-button-bg: red;
+@color-button-border: red;
+@color-button-caption: red;
+
+.button
+{
+  &_default
+  {
+    margin: 50px 0;
+    font-size: 20px;
+    font-weight: 100;
+
+    display: inline-block;
+
+    padding: 20px 35px;
+
+    color: #000;
+    background: @color-button-bg;
+    &-rounded
+    {
+      border-radius: 3px;
+    }
+  }
+  // Кнопка с иконкой слева
+  &_icon
+  {
+    display: flex;
+    flex-direction: row;
+
+    cursor: pointer;
+
+    border: 2px solid #e8e8e8;
+    border-radius: 4px;
+
+    flex-wrap: nowrap;
+    i
+    {
+      display: flex;
+
+      padding: 10px 10px;
+
+      background: #e8e8e8;
+
+      justify-content: center;
+      align-items: center;
+      svg
+      {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    a
+    {
+      font-weight: 500;
+
+      display: flex;
+
+      padding: 10px 10px;
+
+      text-decoration: none;
+
+      color: #000;
+
+      justify-content: center;
+      align-items: center;
+    }
+    &:hover
+    {
+      border: 2px solid #ffe400;
+      i
+      {
+        background: #ffe400;
+      }
+    }
+  }
+  // Кнопка с рамкой
+  &_border
+  {
+    font-size: 24px;
+    font-weight: 100;
+
+    margin: 50px 0;
+    padding: 25px 45px;
+
+    color: @color-button-caption;
+    border: 1px solid @color-button-border;
+  }
+}

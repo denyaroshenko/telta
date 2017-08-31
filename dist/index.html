@@ -1,60 +1,357 @@
 <!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="description" content="">
-		<title>Заголовок страницы</title>
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.min.css">
-	</head>
-	<body>
-		<header>
-			<div class="header__middle container">
-				<a class="header__logo"></a>
-				<div class="header__caption">Российский разработчик<br>и производитель средств связи</div>
-				<div class="header__contacts">
-					<select class="header__change_lang">
-						<option value="">RU</option>
-						<option value="">EN</option>
-					</select>
-					<div class="header__phone">8 800 244 90 90</div>
-					<a href="#" class="header__callback">Заказать звонок</a>
-				</div>
-			</div>
-			<nav class="main-nav">
-				<div class="main-nav__wrapper container">
-					<ul class="main-nav__list">
-						<li class="main-nav__item"><a href="#">О компании</a></li>
-						<li class="main-nav__item">
-							<a href="#">Продукция</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Спецаппаратура</a></li>
-								<li><a href="#">Бытовые и промышленные аппараты</a></li>
-								<li><a href="#">ООКР</a></li>
-								<li><a href="#">Инструментальное производство</a></li>
-								<li><a href="#">Спецлаборатория</a></li>
-								<li><a href="#">Пластмассовое производство</a></li>
-							</ul>
-						</li>
-						<li class="main-nav__item"><a href="#">Услуги</a></li>
-						<li class="main-nav__item"><a href="#">Поддержка</a></li>
-						<li class="main-nav__item"><a href="#">Контактная информация</a></li>
-					</ul>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <title>Заголовок страницы</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="header__middle container">
+        <a class="header__logo"></a>
+        <div class="header__caption">Российский разработчик<br>и производитель средств связи</div>
+        <div class="header__contacts">
+          <select class="header__change_lang">
+            <option value="">RU</option>
+            <option value="">EN</option>
+          </select>
+          <div class="header__phone">8 800 244 90 90</div>
+          <a href="#" class="header__callback">Заказать звонок</a>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <div class="main-nav__wrapper container">
+          <ul class="main-nav__list">
+            <li class="main-nav__item"><a href="#">О компании</a></li>
+            <li class="main-nav__item">
+              <a href="#">Продукция</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Спецаппаратура</a></li>
+                <li><a href="#">Бытовые и промышленные аппараты</a></li>
+                <li><a href="#">ООКР</a></li>
+                <li><a href="#">Инструментальное производство</a></li>
+                <li><a href="#">Спецлаборатория</a></li>
+                <li><a href="#">Пластмассовое производство</a></li>
+              </ul>
+            </li>
+            <li class="main-nav__item"><a href="#">Услуги</a></li>
+            <li class="main-nav__item"><a href="#">Поддержка</a></li>
+            <li class="main-nav__item"><a href="#">Контактная информация</a></li>
+          </ul>
+          <form class="search">
+            <input type="search" name="q" placeholder="Поиск по сайту">
+            <input type="submit" value="">
+          </form>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Баннер -->
+      <section>
+        <div class="banner">
+          <div class="banner__item">
+            <div class="container">
+              <div class="banner__body">
+                <div class="banner__header">Телефонные аппараты спецсвязи   серии «Престиж»</div>
+                <a class="header__button button_border">Подробнее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mt55">
+        <div class="inner_menu container">
+          <div class="inner_menu_item">
+            <div class="inner_menu_item__icon">
+              <img src="assets/images/icons/icon-wallet.png" alt="">
+            </div>
+            <a href="/catalog/rasprodazha/" class="inner_menu_item__header">Низкие цены,<br>широкий ассортимент</a>
+          </div>
+          <div class="inner_menu_item">
+            <div class="inner_menu_item__icon">
+              <img src="assets/images/icons/icon-map.png" alt="">
+            </div>
+            <a class="inner_menu_item__header">Широкая сеть представительств</a>
+          </div>
+          <div class="inner_menu_item">
+            <div class="inner_menu_item__icon">
+              <img src="assets/images/icons/icon-certificate.png" alt="">
+            </div>
+            <a class="inner_menu_item__header">Весть товар сертифицирован</a>
+          </div>
+          <div class="inner_menu_item">
+            <div class="inner_menu_item__icon">
+              <img src="assets/images/icons/icon-delivery.png" alt="">
+            </div>
+            <a class="inner_menu_item__header">Оперативная<br>доставка</a>
+          </div>
+        </div>
+      </section>
 
+      <section>
+        <div class="container">
+          <h2>Крупнейший производитель телефонной техники и средств связи в России</h2>
+          <div class="row">
+            <div class="col-lg-25">
+              <div class="production__item">
+                <div class="production__img">
+                  <img src="assets/images/phones/1.png" alt="">
+                </div>
+                <a href="#" class="production__title">Абонентские телефонные переключатели АТП-1, АТП-2</a>
+              </div>
+            </div>
+            <div class="col-lg-25">
+              <div class="production__item">
+                <div class="production__img">
+                  <img src="assets/images/phones/2.png" alt="">
+                </div>
+                <a href="#" class="production__title">Аппараты серии «НЕФРИТ» и «СЕЛЕНИТ»</a>
+              </div>
+            </div>
+            <div class="col-lg-25">
+              <div class="production__item">
+                <div class="production__img">
+                  <img src="assets/images/phones/3.png" alt="">
+                </div>
+                <a href="#" class="production__title">Абонент-5</a>
+              </div>
+            </div>
+            <div class="col-lg-25">
+              <div class="production__item">
+                <div class="production__img">
+                  <img src="assets/images/phones/4.png" alt="">
+                </div>
+                <a href="#" class="production__title">Абонент-5М</a>
+              </div>
+            </div>
+          </div>
+          <div class="row center">
+            <a href="#" class="button_default button_default-rounded">Вся продукция</a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <h2>О компании</h2>
+          <div class="row">
+            <div class="col-lg-50">
+              <div class="content__img">
+                <img src="assets/images/content/photo.png" alt="">
+                            </div>
+              </div>
+            <div class="col-lg-50">
+              <div class="content__text">
+                <p>
+                Открытое акционерное общество пермский телефонный завод "Телта" имеет 60-ти летний опыт в разработке и изготовлении качественной и надежной продукции, обладает мощным производственным и техническим потенциалом и является крупнейшим производителем в России по выпуску абонентских телефонных устройств проводной связи, практически любых назначений.</p>
+                <p>История ОАО ПТЗ "ТЕЛТА" началась в тревожное для нашей страны время. 9 августа 1941 года в город Пермь прибыли специалисты и оборудование электромеханического завода, эвакуированного из Ленинграда, а в следующем месяце уже была выпущена первая партия телефонных аппаратов. От производства полевых телефонных аппаратов в деревянных корпусах с фоническим вызовом завод поэтапно перешел к выпуску сложных телефонных устройств, выполняемых на специализированных интегральных схемах. <a href="#">Подробнее</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section>
+        <div class="numbers">
+          <div class="container">
+            <div class="row sb">
+              <div class="col-lg-25 numbers__item">
+                <div class="numbers__num">200</div>
+                <div class="numbers__caption">видов продукции</div>
+              </div>
+              <div class="col-lg-25 numbers__item">
+                <div class="numbers__num">500+</div>
+                <div class="numbers__caption">партнеров</div>
+              </div>
+              <div class="col-lg-25 numbers__item">
+                <div class="numbers__num">60 000+</div>
+                <div class="numbers__caption">товаров произведено в 2016 году</div>
+              </div>
+              <div class="col-lg-25 numbers__item">
+                <div class="numbers__num">76</div>
+                <div class="numbers__caption">лет работы</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-					<form class="search">
-						<input type="search" name="q" placeholder="Поиск по сайту">
-						<input type="submit" value="">
-					</form>
-				</div>
-			</nav>
-		</header>
-	<main></main>
-<footer></footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script src="js/main.js"></script>
-</body>
+      <section>
+        <div class="container">
+          <h2>Наше производство</h2>
+          <div class="content__text ta-c">
+            Открытое акционерное общество пермский телефонный завод "Телта" имеет 60-ти летний опыт в разработке и изготовлении качественной и надежной продукции, обладает мощным производственным и техническим потенциалом и является крупнейшим производителем в России по выпуску абонентских телефонных устройств проводной связи, практически любых назначений.
+          </div>
+          <div class="row">
+            <div class="col-md-50 col-lg-50">
+              <div class="row categories__row">
+                <div class="categories__img">
+                  <img src="assets/images/categories/cat_1.png" alt="">
+                </div>
+                <div class="column center">
+                  <div class="categories__title">Спецаппаратура</div>
+                  <div class="categories__caption">Телефонные аппараты спецсвязи силовых ведомств</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-50 col-lg-50">
+              <div class="row categories__row">
+                <div class="categories__img">
+                  <img src="assets/images/categories/cat_2.png" alt="">
+                </div>
+
+                <div class="column center">
+                  <div class="categories__title">Инструментальное производство</div>
+                  <div class="categories__caption">Телефонные аппараты спецсвязи силовых ведомств</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-50 col-lg-50">
+              <div class="row categories__row">
+                <div class="categories__img">
+                  <img src="assets/images/categories/cat_3.png" alt="">
+                </div>
+
+                <div class="column center">
+                  <div class="categories__title">Бытовые и промышленные аппараты</div>
+                  <div class="categories__caption">Телефонные аппараты спецсвязи силовых ведомств</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-50 col-lg-50">
+              <div class="row categories__row">
+                <div class="categories__img">
+                  <img src="assets/images/categories/cat_4.png" alt="">
+                </div>
+
+                <div class="column center">
+                  <div class="categories__title">Спецлаборатория</div>
+                  <div class="categories__caption">Телефонные аппараты спецсвязи силовых ведомств</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-50 col-lg-50">
+              <div class="row categories__row">
+                <div class="categories__img">
+                  <img src="assets/images/categories/cat_5.png" alt="">
+                </div>
+
+                <div class="column center">
+                  <div class="categories__title">ООКР</div>
+                  <div class="categories__caption">Телефонные аппараты спецсвязи силовых ведомств</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-50 col-lg-50">
+              <div class="row categories__row">
+                <div class="categories__img">
+                  <img src="assets/images/categories/cat_6.png" alt="">
+                </div>
+
+                <div class="column center">
+                  <div class="categories__title">Пластмассовое производство</div>
+                  <div class="categories__caption">Телефонные аппараты спецсвязи силовых ведомств</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2>Новости</h2>
+          <div class="row">
+            <div class="col-md-50 col-lg-33">
+              <div class="news__item">
+                <div class="news__img">
+                  <img src="assets/images/news/news_1.png" alt="">
+                </div>
+                <div class="news__date">12.07.2017</div>
+                <a href="#" class="news__title">Обновление линейки телефонов</a>
+                <div class="news__description">Телефонные аппараты спецсвязи силовых ведомств...</div>
+              </div>
+            </div>
+            <div class="col-md-50 col-lg-33">
+              <div class="news__item">
+                <div class="news__img">
+                  <img src="assets/images/news/news_2.png" alt="">
+                </div>
+                <div class="news__date">12.07.2017</div>
+                <a href="#" class="news__title">Обновление линейки телефонов</a>
+                <div class="news__description">Телефонные аппараты спецсвязи силовых ведомств...</div>
+              </div>
+            </div>
+            <div class="col-md-50 col-lg-33">
+              <div class="news__item">
+                <div class="news__img">
+                  <img src="assets/images/news/news_3.png" alt="">
+                </div>
+                <div class="news__date">12.07.2017</div>
+                <a href="#" class="news__title">Обновление линейки телефонов</a>
+                <div class="news__description">Телефонные аппараты спецсвязи силовых ведомств...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer__column">
+            <div class="footer_column__items">
+              <img src="assets/images/logo.png" class="footer_column__item-logo" alt="">
+            </div>
+          </div>
+          <div class="footer__column">
+            <div class="footer_column__title">Продукция</div>
+            <div class="footer_column__items">
+              <a href="#" class="footer_column__item-link">Спецаппаратура</a>
+              <a href="#" class="footer_column__item-link">Бытовые и промышленные аппараты</a>
+              <a href="#" class="footer_column__item-link">ООКР</a>
+              <a href="#" class="footer_column__item-link">Инструментальное производство</a>
+              <a href="#" class="footer_column__item-link">Спецлаборатория</a>
+              <a href="#" class="footer_column__item-link">Пластмассовое производство</a>
+            </div>
+          </div>
+          <div class="footer__column">
+            <div class="footer_column__title">Компания</div>
+            <div class="footer_column__items">
+              <a href="#" class="footer_column__item-link">О компании</a>
+              <a href="#" class="footer_column__item-link">Продукция</a>
+              <a href="#" class="footer_column__item-link">Услуги</a>
+              <a href="#" class="footer_column__item-link">Поддержка</a>
+              <a href="#" class="footer_column__item-link">Контактная информация</a>
+            </div>
+          </div>
+          <div class="footer__column">
+            <div class="footer_column__items">
+              <a href="tel:88002449090" class="footer_column__item-phone">8 800 244 90 90</a>
+              <a class="footer_column__item-callback">Заказать звонок</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <div class="footer-copyright__items">
+            <span>© 2007-2017 Все права защищены</span>
+            <span><a href="#">Создание сайта - Студия "Бобрик"</a></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

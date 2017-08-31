@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&subset=cyrillic');
 @font-main: 'Roboto', sans-serif;
 
+@import url(buttons.less);
+
 // Размеры
 @container-max-width: 1100px;
 @main-menu-height: 65px;
@@ -10,10 +12,18 @@
 @header-min-height: 135px;
 
 // Цвета
-@color-main: #003474;
+@color-gray-bg: #f2f2f2;
+@color-gray-text: #bdbdbd;
+@color-img-bg: #c1d3f7;
+@color-link: #06c;
 @color-main-dark: #002553;
 @color-main-second: #ffdd02;
-@color-link: #06c;
+@color-main: #003474;
+
+// Цвет кнопок
+@color-button-bg: @color-main-second;
+@color-button-border: @color-main-second;
+@color-button-caption: @color-main-second;
 
 body
 {
@@ -37,6 +47,7 @@ input[type=submit]
   cursor: pointer;
 }
 
+// Сетка
 .clearfix::after
 {
   display: table;
@@ -81,9 +92,9 @@ header
   {
     width: 150px;
     height: 63px;
-    margin: 20px;
+    margin: 20px 0;
 
-    background: url('../img/logo.png') center center no-repeat;
+    background: url('assets/images/logo.png') center center no-repeat;
     background-size: contain;
   }
   &__caption
@@ -143,7 +154,7 @@ header
     border: 0;
     outline: none;
     background: transparent;
-    background: url('../img/icon-dropdown-white.png') no-repeat right;
+    background: url('assets/images/icon-dropdown-white.png') no-repeat right;
     background-size: 10px;
 
     appearance: none;
@@ -204,10 +215,11 @@ header
 .dropdown-menu
 {
   position: absolute;
+  z-index: 100;
   top: 100%;
   left: 0;
+
   display: none;
-  z-index: 100;
 
   width: max-content;
   padding: 20px;
@@ -217,11 +229,12 @@ header
   li
   {
     margin: 20px 0;
-    background: url('../img/icon-menu-item.png') left center no-repeat;
-    background-size: 7px;
     padding-left: 20px;
 
     list-style: none;
+
+    background: url('assets/images/icon-menu-item.png') left center no-repeat;
+    background-size: 7px;
     &:first-child
     {
       margin-top: 0;
@@ -280,6 +293,563 @@ input[type=submit]
   height: 40px;
 
   border: 0;
-  background: url('../img/icon-search.png') center center no-repeat;
+  background: url('assets/images/icon-search.png') center center no-repeat;
   background-size: 20px;
+}
+
+// Футер
+.footer
+{
+  padding-top: 40px;
+
+  background: url('assets/images/element.png') right 20px no-repeat, @color-main;
+  background-size: contain;
+  &-main
+  {
+    display: flex;
+
+    margin-bottom: 38px;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__requezits
+    {
+      display: flex;
+      flex-direction: column;
+
+      margin-right: 90px;
+      .company-name
+      {
+        font-size: 20px;
+        font-weight: 500;
+
+        color: #fff;
+      }
+      .company-subname
+      {
+        font-size: 14px;
+        font-weight: 100;
+
+        margin-top: 5px;
+
+        letter-spacing: .4px;
+
+        color: #fff;
+      }
+      .requezits
+      {
+        font-size: 16px;
+        font-weight: 100;
+        line-height: 1.6;
+
+        margin-top: 30px;
+
+        letter-spacing: -.7px;
+
+        color: #9ec5df;
+      }
+    }
+  }
+  &_column
+  {
+    &__title
+    {
+      font-size: 14px;
+      font-weight: 100;
+
+      margin-bottom: 30px;
+
+      text-transform: uppercase;
+
+      color: #fff;
+    }
+    &__header
+    {
+      font-size: 15px;
+      font-weight: 100;
+
+      display: block;
+
+      margin-bottom: 7px;
+
+      text-transform: uppercase;
+
+      color: #fff;
+    }
+    &__items
+    {
+      display: flex;
+      flex-direction: column;
+    }
+    &__item
+    {
+      &-text
+      {
+        font-size: 15px;
+        font-weight: 100;
+
+        display: block;
+
+        margin-bottom: 7px;
+
+        color: #fff;
+      }
+      &-link
+      {
+        font-size: 15px;
+        font-weight: 100;
+
+        display: block;
+
+        margin-bottom: 7px;
+
+        text-decoration: underline;
+
+        color: #fff;
+        &:hover
+        {
+          text-decoration: none;
+
+          color: @color-main-second;
+        }
+      }
+      &-phone
+      {
+        font-size: 18px;
+        font-weight: 500;
+
+        text-decoration: none;
+
+        color: #fff;
+      }
+      &-callback
+      {
+        font-size: 15px;
+        font-weight: 100;
+
+        display: inline-table;
+
+        margin-top: 5px;
+
+        text-align: right;
+        text-decoration: none;
+
+        color: #fff;
+        border-bottom: 1px dashed #fff;
+      }
+      &-logo
+      {
+        width: 150px;
+      }
+    }
+  }
+  &__row
+  {
+    margin-bottom: 40px;
+  }
+  &-copyright
+  {
+    font-size: 14px;
+    font-weight: 300;
+
+    width: 100%;
+
+    color: #fff;
+    background: #fff;
+    &__items
+    {
+      display: flex;
+
+      justify-content: space-between;
+      span
+      {
+        margin-top: 16px;
+        margin-bottom: 20px;
+      }
+    }
+    a
+    {
+      text-decoration: none;
+
+      color: #fff;
+    }
+  }
+}
+
+.ta{
+  &-l{
+    text-align: left;
+  }
+  &-c{
+    text-align: center;
+  }
+  &-r{
+    text-align: right;
+  }
+}
+
+.border{
+  border: 1px solid red;
+  margin: -1px;
+}
+
+.row
+{
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
+.center
+{
+  justify-content: center;
+}
+
+.sb
+{
+  justify-content: space-between;
+}
+
+.col
+{
+  &-md
+  {
+    &-25
+    {
+      .border();
+      @media (min-width: @screen-size-md)
+      {
+        width: 25%;
+        padding-right: 10px;
+        padding-left: 10px;
+        box-sizing: border-box;
+      }
+    }
+    &-33
+    {
+      .border();
+      @media (min-width: @screen-size-md)
+      {
+        width: 33.3%;
+        padding-right: 10px;
+        padding-left: 10px;
+        box-sizing: border-box;
+      }
+    }
+    &-50
+    {
+      .border();
+      @media (min-width: @screen-size-md)
+      {
+        width: 50%;
+        padding-right: 10px;
+        padding-left: 10px;
+        box-sizing: border-box;
+      }
+    }
+  }
+  &-lg
+  {
+    &-25
+    {
+      .border();
+      @media (min-width: @screen-size-lg)
+      {
+        width: 25%;
+        padding-right: 10px;
+        padding-left: 10px;
+        box-sizing: border-box;
+      }
+    }
+    &-33
+    {
+      .border();
+      @media (min-width: @screen-size-lg)
+      {
+        width: 33.3%;
+        padding-right: 10px;
+        padding-left: 10px;
+        box-sizing: border-box;
+      }
+    }
+    &-50
+    {
+      .border();
+      @media (min-width: @screen-size-lg)
+      {
+        width: 50%;
+        padding-right: 10px;
+        padding-left: 10px;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+
+
+// Баннеры
+.banner
+{
+  &__item
+  {
+    height: 450px;
+
+    background: url('assets/images/banner_1.png') center center no-repeat;
+    background-size: cover;
+    & > .container
+    {
+      height: 100%;
+    }
+  }
+  &__header
+  {
+    font-size: 32px;
+    font-weight: 100;
+    line-height: 50px;
+
+    width: 50%;
+
+    color: #fff;
+  }
+  &__body
+  {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+.inner_menu
+{
+  display: flex;
+
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &_item
+  {
+    display: flex;
+    flex-direction: row;
+
+    width: 25%;
+    margin: 20px 0;
+
+    align-items: center;
+    &:hover
+    {
+      .inner_menu_item__icon
+      {
+        background: @color-main-second;
+      }
+      .inner_menu_item__header
+      {
+        text-decoration: none;
+
+        color: #000;
+      }
+    }
+    &__icon
+    {
+      width: 40px;
+      height: 40px;
+      margin-right: 15px;
+      padding: 15px;
+
+      text-align: center;
+
+      background: @color-gray-bg;
+      &:hover
+      {
+        background: @color-main-second;
+      }
+      img
+      {
+        width: auto;
+        height: 40px;
+      }
+    }
+    &__header
+    {
+      font-size: 16px;
+
+      color: #000;
+    }
+  }
+}
+
+section
+{
+  h2
+  {
+    font-size: 34px;
+    font-weight: 100;
+
+    text-align: center;
+  }
+}
+
+.production
+{
+  &__item
+  {
+
+  }
+  &__img
+  {
+    display: flex;
+
+    height: 170px;
+    padding: 10px;
+
+    background: @color-img-bg;
+
+    justify-content: center;
+    align-items: center;
+    img
+    {
+      height: 100%;
+    }
+  }
+  &__title
+  {
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 26px;
+
+    margin-top: 25px;
+
+    text-decoration: underline;
+
+    color: @color-link;
+  }
+}
+
+.content
+{
+  &__img
+  {
+    width: 100%;
+    img
+    {
+      width: 95%;
+    }
+  }
+  &__text
+  {
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 24px;
+
+    p:first-child
+    {
+      margin-top: 0;
+    }
+      a
+      {
+        text-decoration: underline;
+
+        color: @color-link;
+      }
+  }
+}
+
+.numbers
+{
+  margin: 50px 0;
+
+  background: @color-main;
+  &__item
+  {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+
+    align-items: center;
+  }
+  &__num
+  {
+    font-size: 60px;
+    font-weight: 900;
+
+
+    color: @color-main-second;
+  }
+  &__caption
+  {
+    font-size: 16px;
+    font-weight: 100;
+
+    color: #fff;
+  }
+}
+
+.categories{
+  &__img{
+    width: 20%;
+    margin-right: 30px;
+    img{
+      width: 100%;
+    }
+  }
+  &__title{
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 100;
+    color: @color-link;
+    text-decoration: underline;
+  }
+  &__caption{
+    font-size: 16px;
+    font-weight: 100;
+    color: #000;
+  }
+  &__row{
+    display: flex;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+// Новости
+.news{
+  &__item{
+    margin-bottom: 30px;
+  }
+  &__img{
+    img{
+      width: 100%;
+    }
+  }
+  &__date{
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 100;
+    color: @color-gray-text;
+  }
+  &__title{
+    font-size: 16px;
+    font-weight: 100;
+    color: @color-link;
+    text-decoration: underline;
+    line-height: 30px;
+  }
+  &__description{
+    font-size: 16px;
+    font-weight: 100;
+    color: #000;
+  }
 }
