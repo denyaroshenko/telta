@@ -1,5 +1,6 @@
 // Дропдаун
 $(document).ready(function(){
+
   $('.main-nav__item').hover(function () {
     clearTimeout($.data(this,'timer'));
     $('ul',this).stop(true,true).show();
