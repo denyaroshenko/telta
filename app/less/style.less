@@ -3,7 +3,9 @@
 
 @import url(buttons.less);
 @import url(slick.less);
+@import url(my-slick.less);
 @import url(setting.css);
+@import url(grid.less);
 
 // Размеры
 @container-max-width: 1100px;
@@ -522,15 +524,6 @@ input[type=submit]
   }
 }
 
-.border
-{
-  margin: -1px;
-
-  border: 1px solid red;
-}
-
-
-
 .center
 {
   justify-content: center;
@@ -552,210 +545,10 @@ input[type=submit]
   align-items: flex-end;
 }
 
-//Сетка
-
-
-.column
-{
-  display: flex;
-  flex-direction: column;
-}
-
-.row
-{
-  display: flex;
-  flex-direction: row;
-
-  margin-right: -15px;
-  margin-left: -15px;
-
-  flex-wrap: wrap;
-  @media (max-width: @screen-size-sm)
-  {
-    margin-right: 0;
-    margin-left: 0;
-  }
-}
-
-// Отступы
-.indents
-{
-  box-sizing: border-box;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.col
-{
-  width: 100%;
-  padding-right: 0;
-  padding-left: 0;
-  &-remainder{
-    flex: 1;
-  }
-  &-sm
-  {
-    &-16{
-      .border();
-      @media (min-width: @screen-size-sm)
-      {
-        width: 16.66666666666667%;
-
-        .indents();
-      }
-    }
-    &-25
-    {
-      .border();
-      @media (min-width: @screen-size-sm)
-      {
-        width: 25%;
-
-        .indents();
-      }
-    }
-    &-33
-    {
-      .border();
-      @media (min-width: @screen-size-sm)
-      {
-        width: 33.33333333333333%;
-
-        .indents();
-      }
-    }
-    &-50
-    {
-      .border();
-      @media (min-width: @screen-size-sm)
-      {
-        width: 50%;
-
-        .indents();
-      }
-    }
-    &-100
-    {
-      .border();
-      @media (min-width: @screen-size-sm)
-      {
-        width: 100%;
-
-        .indents();
-      }
-    }
-  }
-  &-md
-  {
-    &-16{
-      .border();
-      @media (min-width: @screen-size-md)
-      {
-        width: 16.66666666666667%;
-
-        .indents();
-      }
-    }
-    &-25
-    {
-      .border();
-      @media (min-width: @screen-size-sm)
-      {
-        width: 25%;
-
-        .indents();
-      }
-    }
-    &-33
-    {
-      .border();
-      @media (min-width: @screen-size-md)
-      {
-        width: 33.33333333333333%;
-
-        .indents();
-      }
-    }
-    &-50
-    {
-      .border();
-      @media (min-width: @screen-size-md)
-      {
-        width: 50%;
-
-        .indents();
-      }
-    }
-    &-100
-    {
-      .border();
-      @media (min-width: @screen-size-md)
-      {
-        width: 100%;
-
-        .indents();
-      }
-    }
-  }
-  &-lg
-  {
-    &-16{
-      .border();
-      @media (min-width: @screen-size-lg)
-      {
-        width: 16.66666666666667%;
-
-        .indents();
-      }
-    }
-    &-25
-    {
-      .border();
-      @media (min-width: @screen-size-lg)
-      {
-        width: 25%;
-
-        .indents();
-      }
-    }
-    &-33
-    {
-      .border();
-      @media (min-width: @screen-size-lg)
-      {
-        width: 33.33333333333333%;
-
-        .indents();
-      }
-    }
-    &-50
-    {
-      .border();
-      @media (min-width: @screen-size-lg)
-      {
-        width: 50%;
-
-        .indents();
-      }
-    }
-    &-100
-    {
-      .border();
-      @media (min-width: @screen-size-lg)
-      {
-        width: 100%;
-
-        .indents();
-      }
-    }
-  }
-}
-
 .sidebar{
   &__left{
     width: 30%;
     margin-bottom: 65px;
-    .indents();
     .border();
     @media (max-width: @screen-size-sm) {
       width: 100%;
@@ -764,7 +557,6 @@ input[type=submit]
   &__right{
     width: 70%;
     margin-bottom: 65px;
-    .indents();
     .border();
     @media (max-width: @screen-size-sm) {
       width: 100%;
@@ -1035,6 +827,7 @@ section
   margin-bottom: 75px;
   &__item
   {
+    width: 300px;
     margin-bottom: 30px;
   }
   &__img

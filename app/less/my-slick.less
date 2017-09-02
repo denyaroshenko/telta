@@ -1,0 +1,151 @@
+@slick-dot-color: red;
+@slick-dot-color-hover: green;
+@slick-dot-border-radius: 50%;
+@slick-dot-size: 15px;
+
+// Шаблоны
+.slick-dots
+{
+    margin: 0;
+    display: flex !important;
+
+    padding-left: 0;
+
+    justify-content: center;
+    li
+    {
+        list-style: none;
+        &.slick-active
+        {
+            button
+            {
+                background: @slick-dot-color-hover;
+                border-radius: @slick-dot-border-radius;
+                &:hover
+                {
+                    background: @slick-dot-color-hover;
+                }
+            }
+        }
+        button
+        {
+            border-radius: @slick-dot-border-radius;
+            font-size: 0;
+            line-height: 0;
+
+            display: block;
+
+            width: @slick-dot-size;
+            height: @slick-dot-size;
+            margin-right: 3px;
+            margin-left: 3px;
+            padding: 5px;
+
+            cursor: pointer;
+
+            color: transparent;
+            border: 0;
+            outline: none;
+            background: @slick-dot-color;
+            &:hover
+            {
+                cursor: pointer;
+
+                background: @slick-dot-color-hover;
+            }
+            &-active,
+            &:active
+            {
+                background: @slick-dot-color-hover;
+            }
+        }
+    }
+}
+
+.slick-dots-light
+{
+    display: flex !important;
+
+    margin-top: 20px;
+    padding-left: 0;
+
+    justify-content: center;
+    li
+    {
+        list-style: none;
+        &.slick-active
+        {
+            button
+            {
+                background: @slick-dot-color;
+                &:hover
+                {
+                    background: @slick-dot-color;
+                }
+            }
+        }
+        button
+        {
+            font-size: 0;
+            line-height: 0;
+
+            display: block;
+
+            width: @slick-dot-size;
+            height: @slick-dot-size;
+            margin-right: 3px;
+            margin-left: 3px;
+            padding: 5px;
+
+            cursor: pointer;
+
+            color: transparent;
+            border: 0;
+            outline: none;
+            background: @slick-dot-color;
+            &:hover
+            {
+                cursor: pointer;
+
+                background: lighten(@slick-dot-color, 15);
+            }
+            &-active,
+            &:active
+            {
+                background: @slick-dot-color;
+            }
+        }
+    }
+}
+
+// Стрелки
+.slick-arrow
+{
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    background: transparent;
+}
+.slick-prev
+{
+    position: absolute;
+    top: 35px;
+    left: -30px;
+
+    background: url('/templates/tehass/resource/img/icons/arrow_prev.png') center center no-repeat;
+    background-size: contain;
+}
+
+.slick-next
+{
+    position: absolute;
+    top: 35px;
+    right: -30px;
+
+    background: url('/templates/tehass/resource/img/icons/arrow_next.png') center center no-repeat;
+    background-size: contain;
+}

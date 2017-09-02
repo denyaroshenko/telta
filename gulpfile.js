@@ -17,7 +17,7 @@ var path = {
     build: { //Куда складывать готовые после сборки файлы
         html: 'dist/',
         js: 'dist/assets/js/',
-        css: 'dist/',
+        css: 'dist/assets/css/',
         img: 'dist/assets/images/',
         fonts: 'dist/assets/fonts/',
         htaccess: 'dist/',

@@ -1,156 +1,98 @@
-@slick-dot-color: red;
-@slick-dot-color-hover: green;
-@slick-dot-border-radius: 50%;
-@slick-dot-size: 15px;
+/* Slider */
 
-// Шаблоны
-.slick-dots
-{
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
     margin: 0;
-    display: flex !important;
+    padding: 0;
 
-    padding-left: 0;
+    &:focus {
+        outline: none;
+    }
 
-    justify-content: center;
-    li
-    {
-        list-style: none;
-        &.slick-active
-        {
-            button
-            {
-                background: @slick-dot-color-hover;
-                border-radius: @slick-dot-border-radius;
-                &:hover
-                {
-                    background: @slick-dot-color-hover;
-                }
-            }
-        }
-        button
-        {
-            border-radius: @slick-dot-border-radius;
-            font-size: 0;
-            line-height: 0;
-
-            display: block;
-
-            width: @slick-dot-size;
-            height: @slick-dot-size;
-            margin-right: 3px;
-            margin-left: 3px;
-            padding: 5px;
-
-            cursor: pointer;
-
-            color: transparent;
-            border: 0;
-            outline: none;
-            background: @slick-dot-color;
-            &:hover
-            {
-                cursor: pointer;
-
-                background: @slick-dot-color-hover;
-            }
-            &-active,
-            &:active
-            {
-                background: @slick-dot-color-hover;
-            }
-        }
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
     }
 }
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
 
-.slick-dots-light
-{
-    display: flex !important;
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
 
-    margin-top: 20px;
-    padding-left: 0;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
 
-    justify-content: center;
-    li
-    {
-        list-style: none;
-        &.slick-active
-        {
-            button
-            {
-                background: @slick-dot-color;
-                &:hover
-                {
-                    background: @slick-dot-color;
-                }
-            }
-        }
-        button
-        {
-            font-size: 0;
-            line-height: 0;
+    &:after {
+        clear: both;
+    }
 
-            display: block;
-
-            width: @slick-dot-size;
-            height: @slick-dot-size;
-            margin-right: 3px;
-            margin-left: 3px;
-            padding: 5px;
-
-            cursor: pointer;
-
-            color: transparent;
-            border: 0;
-            outline: none;
-            background: @slick-dot-color;
-            &:hover
-            {
-                cursor: pointer;
-
-                background: lighten(@slick-dot-color, 15);
-            }
-            &-active,
-            &:active
-            {
-                background: @slick-dot-color;
-            }
-        }
+    .slick-loading & {
+        visibility: hidden;
     }
 }
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    [dir="rtl"] & {
+        float: right;
+    }
+    img {
+        display: block;
+    }
+    &.slick-loading img {
+        display: none;
+    }
 
-// Стрелки
-.slick-arrow
-{
-    width: 30px;
-    height: 30px;
+    display: none;
 
-    cursor: pointer;
+    &.dragging img {
+        pointer-events: none;
+    }
 
-    color: transparent;
-    border: 0;
-    background: transparent;
+    .slick-initialized & {
+        display: block;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
 }
-.slick-prev
-{
-    position: absolute;
-    top: 35px;
-    left: -30px;
-
-    background: url('/templates/tehass/resource/img/icons/arrow_prev.png') center center no-repeat;
-    background-size: contain;
-}
-
-.slick-next
-{
-    position: absolute;
-    top: 35px;
-    right: -30px;
-
-    background: url('/templates/tehass/resource/img/icons/arrow_next.png') center center no-repeat;
-    background-size: contain;
-}
-
-.slick-initialized .slick-slide
-{
-    display: flex !important;
+.slick-arrow.slick-hidden {
+    display: none;
 }
