@@ -25,7 +25,7 @@
 @color-main-second: #ffdd02;
 @color-main: #003474;
 @color-gray-border: #e8e8e8;
-@color-text: #333333;
+@color-text: #333;
 
 // Цвет кнопок
 @color-button-bg: @color-main-second;
@@ -42,10 +42,9 @@ body
 {
   font-family: @font-main;
   font-weight: 100;
-
-  // background: url('assets/images/maket/maket.jpg') top center no-repeat;
-  // background: url('assets/images/maket/maket-catalog.jpg') top center no-repeat;
-  // background: url('assets/images/maket/maket-catalog-tovar.jpg') top center no-repeat;
+  // background: url('../images/maket/maket.jpg') top center no-repeat;
+  // background: url('../images/maket/maket-catalog.jpg') top center no-repeat;
+  // background: url('../images/maket/maket-catalog-tovar.jpg') top center no-repeat;
   // opacity: 0.5;
   // position: relative;
   // min-width: 1200px;
@@ -53,14 +52,22 @@ body
 
 a
 {
-  color: @color-link;
   cursor: pointer;
   text-decoration: none;
+
+  color: @color-link;
 }
 
-h2{
-  font-weight: 100;
+li
+{
+  list-style: none;
+}
+
+h2
+{
   font-size: 24px;
+  font-weight: 100;
+
   color: #000;
 }
 
@@ -105,7 +112,9 @@ header
   &__middle
   {
     display: flex;
-    flex-direction: column;
+
+    padding-right: 15px;
+    padding-left: 15px;
 
     justify-content: space-between;
     align-items: center;
@@ -113,6 +122,8 @@ header
     @media only screen and (min-width: @screen-size-md)
     {
       flex-direction: row;
+
+      padding: 0;
     }
   }
   &__logo
@@ -121,20 +132,31 @@ header
     height: 80px;
     margin: 25px 0;
 
-    background: url('assets/images/logo.png') center center no-repeat;
+    background: url('../images/logo.png') center center no-repeat;
     background-size: contain;
+    @media (max-width: @screen-size-md)
+    {
+      order: 0;
+    }
   }
   &__caption
   {
-    font-weight: 100;
     font-size: 18px;
-
-    margin: 20px 0 15px -15px;
+    font-weight: 100;
     line-height: 24px;
 
+    margin: 20px 0 15px -15px;
+
     text-align: center;
+    width: 350px;
 
     color: #fff;
+    @media (max-width: @screen-size-md)
+    {
+      margin: 0 auto 25px;
+
+      order: 2;
+    }
   }
   &__contacts
   {
@@ -143,6 +165,7 @@ header
     display: flex;
     flex-direction: column;
 
+    width: 190px;
     margin: 20px 0;
 
     text-align: right;
@@ -150,6 +173,10 @@ header
     color: #fff;
 
     align-items: flex-end;
+    @media (max-width: @screen-size-md)
+    {
+      order: 1;
+    }
   }
   &__phone
   {
@@ -183,7 +210,7 @@ header
     border: 0;
     outline: none;
     background: transparent;
-    background: url('assets/images/icons/icon-dropdown-white.png') no-repeat right;
+    background: url('../images/icons/icon-dropdown-white.png') no-repeat right;
     background-size: 7px;
 
     appearance: none;
@@ -200,10 +227,14 @@ header
   &__wrapper
   {
     display: flex;
+    overflow: visible;
 
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    @media (max-width: @screen-size-md) {
+      flex-direction: column-reverse;
+    }
   }
   &__list
   {
@@ -213,6 +244,24 @@ header
 
     margin: 0;
     padding: 0;
+    // Скрываем лист на мобильных
+    @media (max-width: @screen-size-md) {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  // Кнопка меню для мобильных
+  &__mobile{
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 23px 20px;
+    color: #fff;
+    display: none;
+    @media (max-width: @screen-size-md) {
+      display: block;
+    }
   }
   &__item
   {
@@ -262,7 +311,7 @@ header
 
     list-style: none;
 
-    background: url('assets/images/icons/icon-menu-item.png') left center no-repeat;
+    background: url('../images/icons/icon-menu-item.png') left center no-repeat;
     background-size: 7px;
     &:first-child
     {
@@ -288,9 +337,17 @@ header
       }
     }
   }
+  @media (max-width: @screen-size-md) {
+    position: relative;
+    left: -20px;
+    width: 100%;
+    box-shadow: none;
+    margin: 20px 0 -20px;
+  }
 }
 
-.search
+// Строка поиска
+.searchform
 {
   position: relative;
 
@@ -299,33 +356,35 @@ header
   margin: 10px 0;
 
   flex-wrap: nowrap;
+  &__button
+  {
+    position: absolute;
+    right: 0;
+
+    width: 40px;
+    height: 40px;
+
+    border: 0;
+    background: url('../images/icons/icon-search.png') center center no-repeat;
+    background-color: transparent !important;
+    background-size: 20px;
+    color: transparent;
+  }
 }
 
 input[type=search]
 {
-  padding: 10px 10px;
   width: 305px;
+  padding: 10px 10px;
 
   border: 0;
   border-radius: 3px;
   &::-webkit-input-placeholder
   {
-    color: @color-main-dark;
     font-size: 15px;
+
+    color: @color-main-dark;
   }
-}
-
-input[type=submit]
-{
-  position: absolute;
-  right: 0;
-
-  width: 40px;
-  height: 40px;
-
-  border: 0;
-  background: url('assets/images/icons/icon-search.png') center center no-repeat;
-  background-size: 20px;
 }
 
 // Футер
@@ -333,13 +392,13 @@ input[type=submit]
 {
   padding-top: 40px;
 
-  background: url('assets/images/element.png') right 20px no-repeat, @color-main;
+  background: url('../images/element.png') right 20px no-repeat, @color-main;
   background-size: contain;
   &-main
   {
-    margin-top: 10px;
     display: flex;
 
+    margin-top: 10px;
     margin-bottom: 45px;
 
     flex-wrap: wrap;
@@ -448,8 +507,9 @@ input[type=submit]
         font-size: 24px;
         font-weight: 500;
 
-        text-decoration: none;
         margin-top: -7px;
+
+        text-decoration: none;
 
         color: #fff;
       }
@@ -534,31 +594,42 @@ input[type=submit]
   justify-content: space-between;
 }
 
-.center-center{
+.center-center
+{
   display: flex;
+
   justify-content: center;
   align-items: center;
 }
 
-.right{
+.right
+{
   display: flex;
+
   align-items: flex-end;
 }
 
-.sidebar{
-  &__left{
+.sidebar
+{
+  &__left
+  {
     width: 30%;
     margin-bottom: 65px;
+
     .border();
-    @media (max-width: @screen-size-sm) {
+    @media (max-width: @screen-size-sm)
+    {
       width: 100%;
     }
   }
-  &__right{
+  &__right
+  {
     width: 70%;
     margin-bottom: 65px;
+
     .border();
-    @media (max-width: @screen-size-sm) {
+    @media (max-width: @screen-size-sm)
+    {
       width: 100%;
     }
   }
@@ -571,8 +642,9 @@ input[type=submit]
   {
     height: 410px;
 
-    background: url('assets/images/banner_1.png') center center no-repeat;
+    background: url('../images/banner_1.png') center center no-repeat;
     background-size: cover;
+    margin-top: -5px;
     & > .container
     {
       height: 100%;
@@ -583,9 +655,9 @@ input[type=submit]
     font-size: 34px;
     font-weight: 100;
     line-height: 50px;
-    margin-top: -50px;
 
     width: 50%;
+    margin-top: -50px;
 
     color: #fff;
   }
@@ -598,8 +670,12 @@ input[type=submit]
 
     justify-content: center;
     align-items: flex-start;
+    @media (max-width: @screen-size-md) {
+      margin: 20px;
+    }
   }
-  &__button{
+  &__button
+  {
     margin-top: 30px;
   }
 }
@@ -608,9 +684,10 @@ input[type=submit]
 {
   display: flex;
 
+  margin-top: 35px;
+
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 35px;
   &_item
   {
     display: flex;
@@ -667,9 +744,11 @@ section
   {
     font-size: 34px;
     font-weight: 100;
-    text-align: center;
-    margin-top: 45px;
     line-height: 50px;
+
+    margin-top: 45px;
+
+    text-align: center;
   }
 }
 
@@ -705,7 +784,8 @@ section
 
     color: @color-link;
   }
-  &__button{
+  &__button
+  {
     margin-top: 45px;
   }
 }
@@ -745,6 +825,8 @@ section
 {
   margin: 55px 0;
 
+  white-space: nowrap;
+
   background: @color-main;
   &__item
   {
@@ -773,12 +855,15 @@ section
 
 .categories
 {
-  .content__text{
+  .content__text
+  {
     line-height: 24px;
+
     margin-top: -18px;
     padding: 0 100px;
   }
-  &__items{
+  &__items
+  {
     margin-top: 65px;
   }
   &__img
@@ -814,9 +899,9 @@ section
     flex-direction: row;
 
     margin-bottom: 55px;
+    padding: 0 15px;
 
     flex-wrap: nowrap;
-    padding: 0 15px;
   }
 }
 
@@ -867,17 +952,22 @@ section
   }
 }
 
-.partners{
+.partners
+{
   margin-bottom: 35px;
-  .slick-dots{
+  .slick-dots
+  {
     margin-top: 30px;
   }
-  &__item{
-    background: @color-gray-bg;
+  &__item
+  {
     height: 80px;
-    margin: 0px;
+    margin: 0;
     padding: 10px;
-    img{
+
+    background: @color-gray-bg;
+    img
+    {
       max-width: 100%;
       max-height: 100%;
       margin: 10px;
@@ -885,131 +975,192 @@ section
   }
 }
 
-.catalog_products{
+.catalog_products
+{
   margin-top: 40px;
-  &__item{
+  &__item
+  {
     margin: 0;
     margin-bottom: 40px;
   }
-  &__img{
+  &__img
+  {
     width: 190px;
     height: 190px;
-    border: 1px solid @color-gray-border;
-    padding: 10px;
     margin-right: 25px;
+    padding: 10px;
+
+    border: 1px solid @color-gray-border;
+
     .center-center();
-    img{
+    img
+    {
       max-width: 100%;
       max-height: 100%;
     }
   }
-  &__title{
-    color: @color-link;
-    text-decoration: underline;
+  &__title
+  {
     line-height: 20px;
-  }
-  &__description{
-    margin-top: 10px;
-    color: #000;
-    line-height: 24px;
-  }
-  // Список категорий в сайдбаре
-  &__list{
-    display: flex;
-    flex-direction: column;
-  }
-  &__header{
-    font-size: 16px;
-    font-weight: 900;
-    color: @color-main;
-    margin-bottom: 20px;
-    margin-top: 5px;
-  }
-  &__link{
-    font-size: 16px;
-    line-height: 52px;
+
     text-decoration: underline;
 
+    color: @color-link;
+  }
+  &__description
+  {
+    line-height: 24px;
+
+    margin-top: 10px;
+
+    color: #000;
+  }
+  // Список категорий в сайдбаре
+  &__list
+  {
+    display: flex;
+    flex-direction: column;
+    a
+      {
+        font-size: 16px;
+        line-height: 52px;
+
+        text-decoration: underline;
+        &:hover,
+    &-active{
+
+    font-size: 16px;
+    font-weight: 900;
+    text-decoration: none;
+
+    color: @color-main;
+    }
+      }
+
+  }
+  &__link
+  {
+    font-size: 16px;
+    line-height: 52px;
+
+    text-decoration: underline;
+    &:hover,
+    &-active{
+
+    font-size: 16px;
+    font-weight: 900;
+
+    margin-top: 5px;
+    margin-bottom: 20px;
+
+    color: @color-main;
+    }
   }
   // Страница товара
-  &_card{
-    padding-left: 15px;
-    padding-right: 15px;
+  &_card
+  {
     margin-top: 45px;
-    &__img{
+    padding-right: 15px;
+    padding-left: 15px;
+    &__img
+    {
       width: 410px;
       height: 410px;
       margin-right: 20px;
-      border: 1px solid @color-gray-border;
       padding: 10px;
+
+      border: 1px solid @color-gray-border;
+
       .center-center();
-      img{
+      img
+      {
         max-width: 100%;
         max-height: 100%;
       }
     }
-    &__title{
+    &__title
+    {
       font-size: 24px;
       font-weight: 100;
-      color: #000;
       line-height: 35px;
-      margin-bottom: 17px;
+
       margin-top: -10px;
+      margin-bottom: 17px;
+
+      color: #000;
     }
-    &__description{
-      line-height: 32px;
+    &__description
+    {
       font-size: 16px;
       font-weight: 100;
+      line-height: 32px;
+
       color: @color-text;
     }
-    &__button{
+    &__button
+    {
       margin-top: 20px;
       padding: 20px 26px;
     }
-    &__characteristics{
-      width: 60%;
-      padding-left: 15px;
-      margin-top: 25px;
-      box-sizing: border-box;
-      margin-right: 25px;
-      h3{
-        font-size: 22px;
-        color: @color-text;
-        font-weight: 100;
-      }
-      font-weight: 100;
+    &__characteristics
+    {
       font-size: 16px;
+      font-weight: 100;
       line-height: 32px;
+
+      box-sizing: border-box;
+      width: 60%;
+      margin-top: 25px;
+      margin-right: 25px;
+      padding-left: 15px;
+      h3
+      {
+        font-size: 22px;
+        font-weight: 100;
+
+        color: @color-text;
+      }
     }
-    &__cheme{
-          padding: 0 45px;
-      img{
+    &__cheme
+    {
+      padding: 0 45px;
+      img
+      {
         max-width: 100%;
         max-height: 100%;
       }
     }
-    &__button{
-      &-yellow{
-        border: 2px solid @color-main;
-        color: @color-main;
-        font-weight: 400;
-        padding: 15px 25px;
+    &__button
+    {
+      &-yellow
+      {
         font-size: 20px;
+        font-weight: 400;
+
         margin-left: 20px;
+        padding: 15px 25px;
+
+        color: @color-main;
+        border: 2px solid @color-main;
       }
-      &-blue{
-        border: 2px solid @color-main;
-        color: @color-main;
-        font-weight: 400;
-        padding: 15px 25px;
+      &-blue
+      {
         font-size: 20px;
+        font-weight: 400;
+
         margin-left: 20px;
+        padding: 15px 25px;
+
+        color: @color-main;
+        border: 2px solid @color-main;
       }
     }
   }
 }
 
-.breadcrumbs{
+.breadcrumbs
+{
   margin: 32px 0 30px;
+
   text-decoration: underline;
 }

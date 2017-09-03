@@ -121,31 +121,33 @@
 // Стрелки
 .slick-arrow
 {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 
     cursor: pointer;
+    z-index: 999;
 
     color: transparent;
     border: 0;
     background: transparent;
+    outline: none;
 }
 .slick-prev
 {
     position: absolute;
-    top: 35px;
-    left: -30px;
+    top: 40%;
+    left: 50px;
 
-    background: url('/templates/tehass/resource/img/icons/arrow_prev.png') center center no-repeat;
+    background: url('../images/icons/arrow_left.png') center center no-repeat;
     background-size: contain;
 }
 
 .slick-next
 {
     position: absolute;
-    top: 35px;
-    right: -30px;
+    top: 40%;
+    right: 50px;
 
-    background: url('/templates/tehass/resource/img/icons/arrow_next.png') center center no-repeat;
+    background: url('../images/icons/arrow_right.png') center center no-repeat;
     background-size: contain;
 }

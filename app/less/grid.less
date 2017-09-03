@@ -8,7 +8,7 @@
 
 .border
 {
-  border: 1px solid green;
+  // border: 1px solid green;
 }
 
 .container
@@ -16,8 +16,9 @@
   box-sizing: border-box;
   margin-right: auto;
   margin-left: auto;
+  overflow: hidden;
 
-  border: 2px solid orange;
+  // border: 2px solid orange;
   @media only screen and (min-width: @screen-size-lg)
   {
     max-width: @container-max-width;
@@ -38,7 +39,7 @@
   margin-right: -15px;
   margin-left: -15px;
 
-  border: 1px solid red;
+  .border;
 
   flex-wrap: wrap;
 }
@@ -72,6 +73,7 @@
   &-remainder
   {
     flex: 1;
+    .indents();
   }
   &-sm
   {

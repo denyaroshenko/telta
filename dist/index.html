@@ -26,6 +26,7 @@
 		</div>
 		<nav class="main-nav">
 			<div class="main-nav__wrapper container">
+				<span class="main-nav__mobile">Меню</span>
 				<ul class="main-nav__list">
 					<li class="main-nav__item"><a href="#">О компании</a></li>
 					<li class="main-nav__item">
@@ -43,9 +44,9 @@
 					<li class="main-nav__item"><a href="#">Поддержка</a></li>
 					<li class="main-nav__item"><a href="#">Контактная информация</a></li>
 				</ul>
-				<form class="search">
+				<form class="searchform">
 					<input type="search" name="q" placeholder="Поиск по сайту">
-					<input type="submit" value="">
+					<input type="submit" class="searchform__button" value="">
 				</form>
 			</div>
 		</nav>
@@ -53,7 +54,23 @@
 	<main>
 		<!-- Баннер -->
 		<section>
-			<div class="banner">
+			<div class="banner banner_slider">
+				<div class="banner__item">
+					<div class="container">
+						<div class="banner__body">
+							<div class="banner__header">Телефонные аппараты спецсвязи   серии «Престиж»</div>
+							<a class="header__button button_border button-rounded banner__button">Подробнее</a>
+						</div>
+					</div>
+				</div>
+				<div class="banner__item">
+					<div class="container">
+						<div class="banner__body">
+							<div class="banner__header">Телефонные аппараты спецсвязи   серии «Престиж»</div>
+							<a class="header__button button_border button-rounded banner__button">Подробнее</a>
+						</div>
+					</div>
+				</div>
 				<div class="banner__item">
 					<div class="container">
 						<div class="banner__body">
@@ -477,6 +494,12 @@
 					dots: true,
 					slidesToShow: 6,
 					slidesToScroll: 6
+				});
+				$('.banner_slider').slick({
+					arrows: true,
+					dots: true,
+					slidesToShow: 1,
+					slidesToScroll: 1
 				});
 			});
 		</script>
