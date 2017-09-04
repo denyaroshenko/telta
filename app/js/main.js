@@ -6,7 +6,7 @@ $(document).ready(function(){
 		});
 
 		if (window_width <=768) {
-				$('.main-nav__item').click(function () {
+				$('.menu-item').click(function () {
 					clearTimeout($.data(this,'timer'));
 					$('ul',this).stop(true,true).slideToggle(300);
 				}, function () {
@@ -16,7 +16,7 @@ $(document).ready(function(){
 				});
 			}
 			else{
-				$('.main-nav__item').hover(function () {
+				$('.menu-item').hover(function () {
 					clearTimeout($.data(this,'timer'));
 					$('ul',this).stop(true,true).slideToggle(300);
 				}, function () {
