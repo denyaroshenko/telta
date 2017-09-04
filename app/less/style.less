@@ -78,6 +78,10 @@ h2
   font-weight: 100;
 
   color: #000;
+  //Костыль
+  p{
+      margin: 0;
+    }
 }
 
 input
@@ -305,7 +309,7 @@ header
   }
 }
 
-// Для WP 
+// Для WP
 .menu{
   &-item{
     position: relative;
@@ -321,6 +325,14 @@ header
       font-weight: 100;
 
       color: #fff;
+    }
+    &:hover
+    {
+      background: @color-main-second;
+      & > a
+      {
+        color: @color-main-dark;
+      }
     }
   }
 }
@@ -366,7 +378,8 @@ header
     }
     &:hover
     {
-      background-color: transparent;
+      background: url('../images/icons/icon-menu-item.png') left center no-repeat;
+      background-size: 7px;
       & > a
       {
         color: @color-main;
@@ -379,6 +392,15 @@ header
     width: 100%;
     box-shadow: none;
     margin: 20px 0 -20px;
+  }
+}
+
+.current-menu-item
+{
+  background: @color-main-second;
+  & > a
+  {
+    color: @color-main-dark;
   }
 }
 
@@ -505,6 +527,24 @@ input[type=search]
     {
       display: flex;
       flex-direction: column;
+      a{
+        font-size: 15px;
+        font-weight: 100;
+
+        display: block;
+
+        margin-bottom: 17px;
+
+        text-decoration: underline;
+
+        color: #fff;
+        &:hover
+        {
+          text-decoration: none;
+
+          color: @color-main-second;
+        }
+      }
     }
     &__item
     {
@@ -540,29 +580,30 @@ input[type=search]
       }
       &-phone
       {
-        font-size: 24px;
-        font-weight: 500;
+        font-size: 24px !important;
+        font-weight: 500 !important;
 
         margin-top: -7px;
+        margin-bottom: 0 !important;
 
-        text-decoration: none;
+        text-decoration: none !important;
 
         color: #fff;
       }
       &-callback
       {
-        font-size: 15px;
-        font-weight: 100;
+        font-size: 15px !important;
+        font-weight: 100 !important;
 
-        display: inline-table;
+        display: inline-table !important;
 
-        margin-top: 5px;
+        margin-top: 5px !important;
 
-        text-align: right;
-        text-decoration: none;
+        text-align: right !important;
+        text-decoration: none !important;
 
-        color: #fff;
-        border-bottom: 1px dashed #fff;
+        color: #fff !important;
+        border-bottom: 1px dashed #fff !important;
       }
       &-logo
       {
@@ -674,13 +715,16 @@ input[type=search]
 // Баннеры
 .banner
 {
+  .slick-dots-white{
+    margin-top: -30px;
+    position: relative;
+  }
   &__item
   {
     height: 410px;
 
     background: url('../images/banner_1.png') center center no-repeat;
     background-size: cover;
-    margin-top: -5px;
     & > .container
     {
       height: 100%;
@@ -917,7 +961,7 @@ section
     margin-right: 30px;
     img
     {
-      width: 100%;
+      width: 120px;
     }
   }
   &__title
@@ -1023,6 +1067,11 @@ section
 .catalog_products
 {
   margin-top: 40px;
+  h2{
+    margin: 0;
+    font-size: 16px;
+    line-height: 20px;
+  }
   &__item
   {
     margin: 0;
@@ -1046,7 +1095,8 @@ section
   }
   &__title
   {
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 20px !important;
 
     text-decoration: underline;
 
@@ -1065,24 +1115,43 @@ section
   {
     display: flex;
     flex-direction: column;
-    a
+    ul
+    {
+      margin-left: 0;
+      padding-left: 0;
+      li
       {
-        font-size: 16px;
-        line-height: 52px;
+        margin: 25px 0;
+        &.current-cat
+        {
+          a{
+            font-size: 16px;
+          font-weight: 900;
 
-        text-decoration: underline;
-        &:hover,
-    &-active{
+          text-decoration: none;
 
-    font-size: 16px;
-    font-weight: 900;
-    text-decoration: none;
-
-    color: @color-main;
-    }
+          color: @color-main !important;
+          }
+        }
       }
+    }
+    a
+    {
+      font-size: 16px;
 
+      text-decoration: underline;
+      &:hover
+        {
+          font-size: 16px;
+          font-weight: 900;
+
+          text-decoration: none;
+
+          color: @color-main;
+        }
+    }
   }
+
   &__link
   {
     font-size: 16px;
@@ -1141,6 +1210,9 @@ section
       line-height: 32px;
 
       color: @color-text;
+      p:first-child{
+        margin-top: 0;
+      }
     }
     &__button
     {
@@ -1165,10 +1237,17 @@ section
 
         color: @color-text;
       }
+      ul{
+        margin: 0;
+        li{
+          list-style: disc;
+        }
+      }
     }
     &__cheme
     {
       padding: 0 45px;
+      margin-top: 25px;
       img
       {
         max-width: 100%;
@@ -1190,6 +1269,7 @@ section
       }
       &-blue
       {
+        margin-top: 25px;
         font-size: 20px;
         font-weight: 400;
 
@@ -1207,5 +1287,18 @@ section
 {
   margin: 32px 0 30px;
 
-  text-decoration: underline;
+  text-decoration: none;
+
+  color: @color-gray-text;
+  .sep
+  {
+    margin: 0 7px;
+  }
+  a
+  {
+    text-decoration: underline;
+
+    color: @color-gray-text;
+  }
 }
+
