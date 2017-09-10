@@ -204,6 +204,7 @@ header
   {
     font-size: 24px;
     font-weight: 500;
+    color: #fff;
   }
   &__callback
   {
@@ -437,6 +438,12 @@ header
   {
     color: @color-main-dark;
   }
+}
+
+.current-menu-item.menu-item-has-children > a {
+    padding-right: 14px;
+    background: url(../images/icons/icon-dropdown.png) right center no-repeat;
+    background-size: 8px;
 }
 
 // Строка поиска
@@ -751,7 +758,7 @@ input[type=search]
 .banner
 {
   .slick-dots-white{
-    margin-top: -30px;
+    margin-top: -40px;
     position: relative;
   }
   &__item
@@ -760,6 +767,7 @@ input[type=search]
 
     background: url('../images/banner_1.png') center center no-repeat;
     background-size: cover;
+    margin-top: -5px;
     & > .container
     {
       height: 100%;
